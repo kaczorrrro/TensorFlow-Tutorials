@@ -1,0 +1,38 @@
+tf.random_normal - generuje punkty z normalnej dystrybucji
+UWAGA: generowanie dzieje siê raz na run, wiêc jeœli chcê zachowaæ te wartoœci pomiêdzy runami to muszê zainicjalizowaæ zmienn¹/sta³¹ na t¹ wartoœæ
+tf.Variable(tf.random_normal(...))
+
+tf.concat(tablica, oœ) - ³¹czy tensory
+
+np.linspace(0,1,10) - tworzy 10 punkty uniformly na lini pomiêdzy 0 a 1 
+
+
+tf.slice() to extract a contiguous slice from the tensor.
+To samo co
+output = input[0, :]
+
+dla nie ci¹g³ych obszarów:
+output = tf.gather(input, [0, 2]) 
+pozwala wycinaæ ca³e rzêdy (tylko i wy³¹cznie)
+
+tf.expand_dims - wstawia nowy wymiar
+
+tf.reduce_sum/mean
+tf.random_crop - bierze dane z np losowych n rzêdow
+tf.argmin(distances, 0) - typowy argmin, zwraca index
+
+tf.dynamic_partition(samples, indices, n_clusters) - partycjonuje samples na postawie indices
+tf.concat - sk³ada dane w tensor
+
+
+
+
+Workflow:
+stworzyæ zmienne
+utworzyæ model -> tf.global_variable_initializer()
+stworzyæ sesjê:
+with tf.Session() as s:
+	uruchomiæ:
+	session.run(zmienna do okreslenia wartoœci)
+	
+	
